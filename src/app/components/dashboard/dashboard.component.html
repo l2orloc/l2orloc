@@ -1,0 +1,91 @@
+
+
+
+<body>
+<div class="header">
+    <p style="font-size:xx-large;font-weight: bolder;">Bienvenido  {{user()}} 
+     <button type="button" class="btn btn-primary" (click)="Onclick()">logOut</button></p>
+    
+</div>
+<div class="wrapper">
+<div class="container">
+  <div>
+    <form (ngSubmit)="mostrarBus()" [formGroup]="buscar" >
+<input  name="buscar1" type="text" placeholder="buscar por nombre" formControlName="busqueda" >  
+<button class="btn btn-info btn-xg"type="submit" >buscar</button>
+<button class="btn btn-info btn-xg"*ngIf="mostrarB" (click)="cancelarBus()">Cancelar</button>
+    </form>
+  </div>
+    <div *ngIf="!editar">
+    <form (ngSubmit)="anadir()" [formGroup]="nuevocliente">
+        <input type="text"placeholder="nombre"formControlName="nombre">
+        <input type="text"placeholder="direccion"formControlName="direccion">
+        <input type="text" placeholder="email"formControlName="email">
+        <input type="text"placeholder="telefono"formControlName="telefono">
+        <input type="text"placeholder="contacto"formControlName="contacto">
+        <button class="btn btn-info btn-xg" type="submit">Agregar</button>
+    </form>
+    </div>
+    <div *ngIf="editar">
+    <form (ngSubmit)="editarAL()" [formGroup]="editarcliente" >
+        <input type="text"placeholder="nombre"formControlName="nombre">
+        <input type="text"placeholder="direccion"formControlName="direccion">
+        <input type="text" placeholder="email"formControlName="email">
+        <input type="text"placeholder="telefono"formControlName="telefono">
+        <input type="text"placeholder="contacto"formControlName="contacto">
+        <button class="btn btn-warning btn-xg" type="submit" (click)="editarAL()">Editar</button>
+        <button type ="button" class="btn btn-danger btn-xg"(click)="cancelar()">cancelar</button>
+    </form>
+    </div>
+    <table class="table table-striped" *ngIf="!mostrarB">
+        <thead>
+          <tr>
+            <th >nombre</th>
+            <th >direccion</th>
+            <th >email</th>
+            <th >telefono</th>
+            <th>contacto</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let cliente of clientes">
+          <tr>
+            <th>{{cliente.nombre}}</th>
+            <td>{{cliente.direccion}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.telefono}}</td>
+            <td>{{cliente.contacto}}</td>
+          
+            <td ><button class="btn btn-dark btn-xg"(click)="editaraOp(cliente)">editar</button></td>
+            <td ><button type ="button" class="btn btn-danger btn-xg"(click)="borrar(cliente)">borrar</button></td>
+          </tr>
+          </tbody>
+      </table>
+     
+     
+      <table class="table table-striped" *ngIf="mostrarB">
+        <thead>
+          <tr>
+            <th >nombre</th>
+            <th >direccion</th>
+            <th >email</th>
+            <th >telefono</th>
+            <th>contacto</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let cliente of clientes">
+          <tr>
+            <th>{{cliente.nombre}}</th>
+            <td>{{cliente.direccion}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.telefono}}</td>
+            <td>{{cliente.contacto}}</td>
+          
+            <td ><button class="btn btn-dark btn-xg"(click)="editaraOp(cliente)">editar</button></td>
+            <td ><button type ="button" class="btn btn-danger btn-xg"(click)="borrar(cliente)">borrar</button></td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+    </div>
+</body>

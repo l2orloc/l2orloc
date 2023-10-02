@@ -1,0 +1,33 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items:flex-end;
+    height: 80%;
+    width: 70%;
+    margin-left: 15%;
+    
+   
+    background-color: rgb(255, 255, 255,0.5);
+}
+.logo{
+    height: 100px;
+    margin-bottom: 10px;
+}
+body{
+   
+    text-align: center;
+    background-image: url('../../../assets/img/angulo-vista-rascacielos.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    max-width: 100%;  
+}
+.body{
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    padding: 35px;
+    text-align: center;
+}

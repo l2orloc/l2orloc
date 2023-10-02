@@ -1,0 +1,18 @@
+<body>
+    
+
+<div class="wrapper">
+    <div class="body" >
+        <p style="font-size: xx-large;font-weight: bolder;">Recuperar password</p>
+    <img class="logo" src="../../../assets/img/acceso.png" alt="login">
+
+<form (ngSubmit)="recover()" [formGroup]="email">
+    <title>Recuperar password</title>
+<input type="text"placeholder="email" formControlName="mail">
+<button type="submit"class="btn btn-lg btn-primary mt-3">Recuperar</button>
+
+</form>
+<a class="mt-6" routerLink="/login">Volver</a>
+</div>
+</div>
+</body>

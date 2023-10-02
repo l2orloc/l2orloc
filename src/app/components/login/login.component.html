@@ -1,0 +1,25 @@
+
+<body>
+    <div class="wrapper mb-3">
+        <div  class="body">        
+            <img class="logo" src="../../../assets/img/acceso.png" alt="login">
+            <h1>Login</h1>
+            <form (ngSubmit)="login()" [formGroup]="loginUsuario">
+                <div class="form-floating mb-3">
+                    <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
+                    <label>Email</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                    <label>Password</label>
+                  </div>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
+                  </div>
+                  <p class="mt-3">¿No dispone de una cuenta? <a routerLink="/register">Registrar</a></p>
+                  <a class="mt-3" routerLink="/recover">Recuperar contraseña</a>
+            </form>
+        </div> 
+       
+    </div>
+    </body>
