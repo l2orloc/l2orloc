@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit{
   nuevocliente:FormGroup;
   editarcliente:FormGroup;
   buscar:FormGroup;
-  //cliente capturado para edita o borrar
+  //cliente capturado para editar o borrar
   clienteED?:cliente;
   //datos de usuario registrado
   private usermal?:User;
